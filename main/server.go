@@ -1,15 +1,21 @@
 package main
 
+// importando pacotes
+
 import (
 	"fmt"
 	"net"
 )
+
+// estruturação dos dados
 
 const (
 	s_host = "localhost"
 	s_port = "8080"
 	s_type = "tcp"
 )
+
+// criando o servidor baseado no protocolo tcp
 
 func main() {
 	s, err := net.Listen(s_type, s_host+":"+s_port)
@@ -30,6 +36,7 @@ func main() {
 	}
 }
 
+// escutando na porta e retornando todos os dados lidos de volta para o cliente
 func connect(connection net.Conn) {
 	defer connection.Close()
 	b := make([]byte, 1024)

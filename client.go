@@ -1,9 +1,13 @@
 package main
 
+// importando pacotes
+
 import (
 	"fmt"
 	"net"
 )
+
+// estruturação dos dados
 
 const (
 	s_host = "localhost"
@@ -11,6 +15,7 @@ const (
 	s_type = "tcp"
 )
 
+// conectando na porta via protocolo tcp
 func main() {
 	connection, err := net.Dial(s_type, s_host+":"+s_port)
 	if err != nil {
